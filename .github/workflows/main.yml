@@ -22,16 +22,18 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: /Dockerfile.db
+          file: ./Dockerfile.db
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: ${{ vars.DOCKER_USERNAME }}/db:latest
 
       - name: Build and push App image
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: /Dockerfile.app
+          file: ./Dockerfile.app
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: ${{ vars.DOCKER_USERNAME }}/app:latest
 
       - name: Build and push with Docker Compose
