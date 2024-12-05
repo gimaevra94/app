@@ -1,0 +1,37 @@
+name: project
+services:
+  app:
+    image: gimaevra94/app:latest
+    container_name: app
+    hostname: app
+    networks:
+      - net
+    ports:
+      - 8000:8000
+    profiles: [dev]
+    
+
+  db:
+    image: gimaevra94/db:latest
+    container_name: db
+    hostname: db
+    networks:
+      - net
+    ports:
+      - 26257:26257
+      - 8080:8080
+      - 33060:33060
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db
+    volumes:
+      - db:/db
+    profiles:
+      - dev
+
+networks:
+  net:
+    driver: bridge
+
+volumes:
+  db:
