@@ -22,7 +22,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: app/Dockerfile.db
+          file: .Dockerfile.db
           push: true
           tags: ${{ vars.DOCKER_USERNAME }}/db:latest
 
@@ -30,7 +30,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: app/Dockerfile.app
+          file: .Dockerfile.app
           push: true
           tags: ${{ vars.DOCKER_USERNAME }}/app:latest
 
