@@ -13,7 +13,7 @@ import (
 func main() {
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatal("Error loading .env file")
+		log.Fatal(err)
 	}
 
 	cfg := mysql.Config{
@@ -34,5 +34,5 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Println("Connected to the MySQL database successfully!")
+	fmt.Println("Successfully!")
 }
