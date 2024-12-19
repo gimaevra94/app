@@ -6,9 +6,12 @@ services:
     hostname: app
     ports:
       - 8000:8000
-    profiles: [dev]
+    profiles: 
+      - dev
     networks:
       - net
+    volumes:
+      - /c/Users/gimaevra94/Documents/git/app/app/web:/app/web
 
   db:
     image: gimaevra94/db:latest
