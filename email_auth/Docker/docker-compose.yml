@@ -11,7 +11,7 @@ services:
     networks:
       - net
     volumes:
-      - /c/Users/gimaevra94/Documents/git/app/app/web:/app/web
+      - /c/Users/gimaevra94/Documents/git/auth/email_auth/app/web:/app/web
 
   db:
     image: gimaevra94/db:latest

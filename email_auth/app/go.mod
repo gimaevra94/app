@@ -1,4 +1,4 @@
-module github.com/gimaevra94/app/app
+module github.com/gimaevra94/auth/email_auth/app
 
 go 1.23.1
 
